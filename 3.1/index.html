@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp01" type="text" placeholder="Введите ответ" width="300px"/>
+    <button onclick="Check()"><strong>Check</strong></button>
+    <script>
+        function Check()
+        {
+            var inp01=document.getElementById('inp01');
+           // alert(inp01.value);
+           inp01.value='Hello';
+           inp01.style.color='red'
+        }
+
+
+
+        /*
+        a=+prompt('input a:');
+        b=+prompt();
+        alert('Сумма: '+(a+b));
+        */
+    </script>
+</body>
+</html>
