@@ -100,70 +100,134 @@
                             <input id="a5" type="text" class="answer" placeholder="Ответ" />
                         </td>
                     </tr>
+
+                    <table border="3" id="q6" class="table">
+                        <tr></tr>
+                            <td rowspan="3">5</td>
+                            <td colspan="4" class="task">
+                                Какая из программ не является утилитой для роботы с диском?
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="variant">1)  NDD</td>
+                            <td class="variant">2) FORMAT</td>
+                            <td class="variant">3) Excel</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <input id="a6" type="text" class="answer" placeholder="Ответ" />
+                            </td>
+                        </tr>
+
+                        <table border="3" id="q7" class="table">
+                            <tr></tr>
+                                <td rowspan="3">5</td>
+                                <td colspan="4" class="task">
+                                    Что такое кластер на магнитном диске?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="variant">1) конверт для диска</td>
+                                <td class="variant">2) единица дискового пространства</td>
+                                <td class="variant">3) виртуальный диск</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <input id="a7" type="text" class="answer" placeholder="Ответ" />
+                                </td>
+                            </tr>
+
+                            <table border="3" id="q8" class="table">
+                                <tr></tr>
+                                    <td rowspan="3">5</td>
+                                    <td colspan="4" class="task">
+                                        Куда записываются сведения о формате дискеты?
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variant">1) в FAT</td>
+                                    <td class="variant">2) в boot sector</td>
+                                    <td class="variant">3) в корневой каталог</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <input id="a8" type="text" class="answer" placeholder="Ответ" />
+                                    </td>
+                                </tr>
+
+                                <table border="3" id="q9" class="table">
+                                    <tr></tr>
+                                        <td rowspan="3">5</td>
+                                        <td colspan="4" class="task">
+                                            Что произойдет, если в FАТ испортиться информация?
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="variant">1) все файлы будет невозможно читать</td>
+                                        <td class="variant">2) пропадает информация на диске</td>
+                                        <td class="variant">3) дискету придется выбросить</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <input id="a9" type="text" class="answer" placeholder="Ответ" />
+                                        </td>
+                                    </tr>
+
+                                    <table border="3" id="q10" class="table">
+                                        <tr></tr>
+                                            <td rowspan="3">5</td>
+                                            <td colspan="4" class="task">
+                                                Системные программы для работы с дисками — это…
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="variant">1) операционные системы</td>
+                                            <td class="variant">2) драйверы</td>
+                                            <td class="variant">3) дисковые утилиты</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">
+                                                <input id="a10" type="text" class="answer" placeholder="Ответ" />
+                                            </td>
+                                        </tr>
     </table>
-    </table>
+    
 
     <script>
         function Check() {
-            let q1 = document.getElementById('q1');
-            let a1 = document.getElementById('a1');
-            let q2 = document.getElementById('q2');
-            let a2 = document.getElementById('a2');
-            let q3 = document.getElementById('q3');
-            let a3 = document.getElementById('a3');
-            let q4 = document.getElementById('q4');
-            let a4 = document.getElementById('a4');
-            let q5 = document.getElementById('q5');
-            let a5 = document.getElementById('a5');
+            const answers=['1', '1', '1', '3', '2', '3', '2', '2', '1','3'];
+            const useranswers = [
+                document.getElementById('a1').value,
+                document.getElementById('a2').value,
+                document.getElementById('a3').value,
+                document.getElementById('a4').value,
+                document.getElementById('a5').value,
+                document.getElementById('a6').value,
+                document.getElementById('a7').value,
+                document.getElementById('a8').value,
+                document.getElementById('a9').value,
+                document.getElementById('a10').value
+            ];
 
-            let coorectanswers=0;
-
-
-
-
-            if (a1.value == '1') {
-                q1.style.border = '1px solid green ';
-                coorectanswers++;
+            let correctanswers=0;
+            
+            for (let i = 0; i < answers.length; i++) {
+                if (useranswers[i] === answers[i]) {
+                    document.getElementById(`q${i + 1}`).style.border = '1px solid green';
+                    correctanswers++;
+                }
+                else {
+                    document.getElementById(`q${i + 1}`).style.border = '1px solid red';
+                }
             }
-            else {
-                q1.style.border = '1px solid red';
-            }
-
-            if (a2.value == '1') {
-                q2.style.border = '1px solid green ';
-                coorectanswers++;
-            }
-            else {
-                q2.style.border = '1px solid red';
-            }
-
-            if (a3.value == '1') {
-                q3.style.border = '1px solid green ';
-                coorectanswers++;
-            }
-            else {
-                q3.style.border = '1px solid red';
-            }
-
-            if (a4.value == '3') {
-                q4.style.border = '1px solid green ';
-                coorectanswers++;
-            }
-            else {
-                q4.style.border = '1px solid red';
-            }
-
-            if (a5.value == '2') {
-                q5.style.border = '1px solid green ';
-                coorectanswers++;
-            }
-            else {
-                q5.style.border = '1px solid red';
-            }
+            
+            document.getElementById('result').innerHTML = `Вы набрали ${correctanswers} из ${answers.length} правильных ответов`;
         }
     </script>
 
     <button onclick="Check()">Проверить</button>
+
+    <p id="result"></p>
 
 
     <p>Разработчики:
