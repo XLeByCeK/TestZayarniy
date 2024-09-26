@@ -7,10 +7,27 @@
 
 .task
 {
+    font-size: 20px;
     text-align: justify;
 }
 
 .table
 {
-border-color: blue;
+width: 90%;
+margin: auto;
+background:#DCDCDC;
+border-collapse: collapse;
+padding-bottom: 10;
+border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border: 1px solid #000;
+  display: block;
+}
+
+td
+{
+    border-spacing: 0 10px;
+    padding: 10px;
 }
