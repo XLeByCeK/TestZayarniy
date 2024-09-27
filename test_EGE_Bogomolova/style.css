@@ -1,13 +1,13 @@
 .variant
 {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 
 .task
 {
-    font-size: 20px;
+    font-size: 25px;
     text-align: justify;
 }
 
@@ -15,19 +15,46 @@
 {
 width: 90%;
 margin: auto;
-background:LightBlue;
-border-collapse: collapse;
+background:white;
+border-collapse: separate; 
+border-spacing: 10px; 
+margin-bottom: 20px; 
 padding-bottom: 10;
 border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -khtml-border-radius: 10px;
-  border: 4px solid white;
   display: block;
 }
 
-td
+th, td
 {
     border-spacing: 0 10px;
     padding: 10px;
+    font-size: 25px;
 }
+
+html {
+    background-image: url(https://s3.stroi-news.ru/img/kartinki-svetlii-fon-65.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .answer{
+
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    margin-top: 20px;
+  }
