@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 align="center">Тест по информатике</h1>
+    <h1 align="center" class="headline">Тест по информатике</h1>
     <table border="0" id="q1" class="table">
         <tr>
             <td rowspan="3" width="10">1</td>
@@ -222,17 +222,32 @@
                 }
             }
             
-            document.getElementById('result').innerHTML = `Вы набрали ${correctanswers} из ${answers.length} правильных ответов`;
+
+            if (correctanswers<4)
+            {
+                mark=2;
+            }
+            if (correctanswers<7 && correctanswers>4)
+            {
+                mark=3;
+            }
+            if (correctanswers<10 && correctanswers>7)
+            {
+                mark=4;
+            }
+            if (correctanswers>9)
+            {
+                mark=5;
+            }
+
+
+            document.getElementById('result').innerHTML = `Вы набрали ${correctanswers} из ${answers.length} правильных ответов, ваша оценка: ${mark}`;
+            document.getElementById('result').hidden = false;
         }
     </script>
 
-    <button onclick="Check()">Проверить</button>
-
-    <p id="result"></p>
-
-
-    <p>Разработчики:
-        Семичев Александр, Петров Андрей
-    </p>
+    <button onclick="Check()" class="check">Проверить</button>
+<br />
+    <p id="result" class="result_" hidden="true"></p>
 </body>
 </html>
