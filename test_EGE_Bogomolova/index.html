@@ -200,8 +200,56 @@
     
 
     <script>
+        const answers=['3', '2', '4', '2', '1', '4', '1', '1', '2','1'];
+        let itemLSName = 'localStorageIvanovIvan';
+
+        function Save() {
+    if (typeof (Storage) === "undefined") {
+        alert("Local Storage не поддерживается.");
+        return;
+    }
+    
+    console.log("Local Storage доступен.");
+
+    let object = {
+        userAnswers: [],
+        savedTime: null
+    };
+    
+    for (let i = 0; i < answers.length; i++) {
+        // Получаем ссылку на объект input с ответом пользователя
+        object.userAnswers[i] = document.getElementById('a' + (i + 1)).value;
+    }
+    
+    object.savedTime = new Date();
+    console.log(object);
+
+    // Убедитесь, что itemLSName определено
+    localStorage.setItem(itemLSName, JSON.stringify(object));
+    alert('Данные сохранены');
+}
+
+setInterval(Save, 30000);
+
+function Load(){
+const temp = localStorage.getItem("localStorageIvanovIvan");
+console.log(temp);
+
+if (temp!=null) {
+    //преобразование JSON данных в объект
+    let object = JSON.parse(temp);
+    //вывод данных в консоль (для проверки работоспособности программы)
+    console.log(object);
+    //заполнение полей веб-страницы данными из массива
+    for (let i = 0; i < object.userAnswers.length; i++) {
+        document.getElementById('a' + (i + 1)).value = object.userAnswers[i];
+    }
+}
+else alert('Нет сохранений с таким именем')
+}
+
+
         function Check() {
-            const answers=['3', '2', '4', '2', '1', '4', '1', '1', '2','1'];
             const useranswers = [
                 document.getElementById('a1').value,
                 document.getElementById('a2').value,
@@ -228,11 +276,12 @@
             }
             
 
-            if (correctanswers<4)
+            let mark;
+            if (correctanswers<=4)
             {
                 mark=2;
             }
-            if (correctanswers<7 && correctanswers>4)
+            if (correctanswers<=7 && correctanswers>4)
             {
                 mark=3;
             }
@@ -245,14 +294,18 @@
                 mark=5;
             }
 
-
-            document.getElementById('result').innerHTML = `Вы набрали ${correctanswers} из ${answers.length} правильных ответов, ваша оценка: ${mark}`;
             document.getElementById('result').hidden = false;
+            document.getElementById('result').innerHTML = `Вы набрали ${correctanswers} из ${answers.length} правильных ответов, ваша оценка: ${mark}`;
         }
     </script>
 
     <button onclick="Check()" class="check">Проверить</button>
 <br />
     <p id="result" class="result_" hidden="true"></p>
+    <br />
+    <section class="button-container">
+        <button class="clickNload" onclick="Save()">Сохранить результаты</button>
+<button class="clickNload" onclick="Load()">Загрузить результаты</button>
+    </section>
 </body>
 </html>

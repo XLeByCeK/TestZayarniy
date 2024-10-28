@@ -73,7 +73,25 @@ html {
     margin: 0 auto;
 
   }
+
   .check:hover {
+    background-color: lightblue; /* ��вет заливки при наведении */
+  }
+
+.clickNload {
+  background-color: blue; /* Синий цвет заливки */
+            color: white; /* Белый текст */
+            padding: 10px 20px; /* Отступы вокруг текста */
+            border: none; /* Без границы */
+            border-radius: 5px; /* Скругление углов */
+            font-size: 25px; /* Размер шрифта */
+            cursor: pointer; /* Курсор-указатель при наведении */
+            transition: background-color 0.3s; /* Плавный переход цвета фона */
+            display: inline-flex;
+}
+
+
+  .clickNload:hover {
     background-color: lightblue; /* ��вет заливки при наведении */
   }
 
@@ -93,4 +111,9 @@ html {
     color: white;
     font-size: 30px;
     ;
+  }
+
+  .button-container {
+    text-align: center; /* Центрирование текста и кнопок */
+    margin: 0 0; /* Отступы сверху и снизу для контейнера */
   }
